@@ -1,38 +1,7 @@
 "use client";
 
 import { Mail, Phone, MapPin, Link, Briefcase, GraduationCap, User } from "lucide-react";
-
-interface PersonalInfo {
-  fullName: string;
-  email: string;
-  phone: string;
-  location: string;
-  linkedin: string;
-  summary: string;
-}
-
-interface Experience {
-  id: string;
-  company: string;
-  position: string;
-  startDate: string;
-  endDate: string;
-  description: string;
-}
-
-interface Education {
-  id: string;
-  institution: string;
-  degree: string;
-  fieldOfStudy: string;
-  graduationYear: string;
-}
-
-interface Skill {
-  id: string;
-  name: string;
-  proficiency: string;
-}
+import type { PersonalInfo, Experience, Education, Skill } from "@/types/cv";
 
 interface CVPreviewProps {
   personalInfo: PersonalInfo;
@@ -58,6 +27,9 @@ function formatDate(dateStr: string): string {
 }
 
 function isValidLinkedIn(url: string): boolean {
+  if (!url.startsWith("http://") && !url.startsWith("https://")) {
+    return false;
+  }
   return url.includes("linkedin.com");
 }
 

@@ -8,29 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import CVPreview from "@/components/dashboard/cv-preview";
-
-interface Experience {
-  id: string;
-  company: string;
-  position: string;
-  startDate: string;
-  endDate: string;
-  description: string;
-}
-
-interface Education {
-  id: string;
-  institution: string;
-  degree: string;
-  fieldOfStudy: string;
-  graduationYear: string;
-}
-
-interface Skill {
-  id: string;
-  name: string;
-  proficiency: string;
-}
+import type { Experience, Education, Skill } from "@/types/cv";
 
 export default function NewCvPage() {
   const [personalInfo, setPersonalInfo] = useState({
