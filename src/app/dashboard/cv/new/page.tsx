@@ -183,7 +183,7 @@ export default function NewCvPage() {
             </Button>
           </CardHeader>
           <CardContent className="space-y-6">
-            {experiences.map((exp, index) => (
+            {experiences.map((exp) => (
               <div key={exp.id} className="relative space-y-4 rounded-lg border p-4">
                 {experiences.length > 1 && (
                   <Button
