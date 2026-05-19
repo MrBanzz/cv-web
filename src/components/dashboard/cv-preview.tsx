@@ -58,7 +58,7 @@ function formatDate(dateStr: string): string {
 }
 
 function isValidLinkedIn(url: string): boolean {
-  return url.startsWith("http://linkedin.com") || url.startsWith("https://linkedin.com");
+  return url.includes("linkedin.com");
 }
 
 export default function CVPreview({ personalInfo, experiences, educations, skills }: CVPreviewProps) {
