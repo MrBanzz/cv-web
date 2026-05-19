@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
+import CVPreview from "@/components/dashboard/cv-preview";
 
 interface Experience {
   id: string;
@@ -366,13 +367,12 @@ export default function NewCvPage() {
             <CardTitle>Preview</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex min-h-[500px] items-center justify-center rounded-lg bg-muted/50 p-8">
-              <div className="text-center text-muted-foreground">
-                <div className="mb-4 text-4xl">📄</div>
-                <p className="text-sm">Live preview will appear here</p>
-                <p className="mt-1 text-xs">Start filling out the form to see your CV</p>
-              </div>
-            </div>
+            <CVPreview
+              personalInfo={personalInfo}
+              experiences={experiences}
+              educations={educations}
+              skills={skills}
+            />
           </CardContent>
         </Card>
       </div>
